@@ -29,7 +29,21 @@ public class SelectorCss {
 //        pause(5);
         driver.navigate().back();
         driver.quit();
+    }
 
+    @Test
+    public void iLCarroTest(){
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://ilcarro.web.app/search");
+        WebElement termsBtn = driver.findElement(By.cssSelector("a[id='2']"));
+        termsBtn.click();
+//        WebElement signUpBtn = drver.findElement(By.cssSelector("a[ng-reflect-router-link='registration']"));
+        WebElement signUpBtn = driver.findElement(By.cssSelector(".header a:nth-child(5)"));
+        signUpBtn.click();
+        driver.navigate().to("https://ilcarro.web.app/search");
+        driver.quit();
 
     }
     static void pause(int time){
