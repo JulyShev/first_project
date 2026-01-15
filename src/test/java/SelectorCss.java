@@ -37,11 +37,22 @@ public class SelectorCss {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://ilcarro.web.app/search");
+        WebElement searchBtn = driver.findElement(By.cssSelector("a[href='/search']"));
+        pause(3);
+        searchBtn.click();
+        WebElement letTheCwBtn = driver.findElement(By.cssSelector("a[id='1']"));
+        pause(3);
+        letTheCwBtn.click();
         WebElement termsBtn = driver.findElement(By.cssSelector("a[id='2']"));
+        pause(3);
         termsBtn.click();
-//        WebElement signUpBtn = drver.findElement(By.cssSelector("a[ng-reflect-router-link='registration']"));
+//      WebElement signUpBtn = drver.findElement(By.cssSelector("a[ng-reflect-router-link='registration']"));
         WebElement signUpBtn = driver.findElement(By.cssSelector(".header a:nth-child(5)"));
+        pause(3);
         signUpBtn.click();
+        WebElement logInBtn = driver.findElement(By.cssSelector("a[ng-reflect-router-link='login']"));
+        pause(5);
+        logInBtn.click();
         driver.navigate().to("https://ilcarro.web.app/search");
         driver.quit();
 
